@@ -1,28 +1,17 @@
 export default abstract class DataBase{
-  name: string;
+  
 
-  constructor(){
-    this.name = ''
+  TemplateEfetuarConsulta = ():void=>{
+    this.init();
+     this.detalheEspecificoMYSQL();
+     this.detalheEspecificoPostgresql();
   }
 
-  readonly TemplateEfetuarConsulta = async ():Promise<void>=>{
-    this.name = await this.detalheEspecificoMYSQL();
-    this.name = await this.detalheEspecificoPostgresql();
+  init(): void {
+    console.log('server init');
+     
   }
 
-  protected abstract detalheEspecificoMYSQL():Promise<string>;
-  protected abstract detalheEspecificoPostgresql():Promise<string>;
-}
-
-
-abstract class BDMYSQL extends DataBase{
-   async detalheEspecificoMYSQL():Promise<string>{
-    return ''
-  }
-}
-
-abstract class BDPostgreSQL extends DataBase{
-  async detalheEspecificoPostgresql():Promise<string>{
-   return ''
- }
+  protected abstract detalheEspecificoMYSQL():void;
+  protected abstract detalheEspecificoPostgresql():void;
 }

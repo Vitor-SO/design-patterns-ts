@@ -1,3 +1,4 @@
+import BDMYSQL from "./Behevioural/TemplateMethod/BDMYSQL";
 import DataBase from "./Behevioural/TemplateMethod/Ex_SqlDataBase";
 import { MyClassicDataBase } from "./creational/Singleton/MyClassicDataBase";
 import { validateEmail } from "./structural/Adapter/client";
@@ -20,4 +21,8 @@ console.log('-----------------------------------------------------------------')
 
 console.log('Template Method')
 
-const search = DataBase
+function clientCode(dataBase: DataBase) {
+  dataBase.TemplateEfetuarConsulta()
+}
+
+clientCode(new BDMYSQL);

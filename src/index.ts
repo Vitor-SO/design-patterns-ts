@@ -44,3 +44,13 @@ const contextCAN = new PedidoVenda(new ImpostoCanada())
 contextCAN.efetuarVenda()
 console.log('-----------------------------------------------------------------')
 
+console.log("Facade");
+
+//example of advanced facade => https://sbcode.net/typescript/facade/
+
+import Facade from "./structural/Facade";
+console.log(Facade.subSystem1())
+console.log(Facade.subSystem2(1))
+console.log(Facade.subSystem3({ C: [1, 2, 3] }))
+console.log('-----------------------------------------------------------------')
+
